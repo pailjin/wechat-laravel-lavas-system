@@ -1,0 +1,19 @@
+/**myClub.wxss**/
+.bannerImg {
+  width: 100%;
+  height: 440rpx;
+}
+
+.userIcon {
+  position: absolute;
+  width: 160rpx;
+  height: 160rpx;
+  top: 340rpx;
+  left: 300rpx;
+  border-radius: 50%;
+}
+
+.userName {
+  margin-top: 70rpx;
+  font-size: 32rpx;
+}

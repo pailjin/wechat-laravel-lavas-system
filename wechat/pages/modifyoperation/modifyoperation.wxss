@@ -1,0 +1,8 @@
+/**modifyPersonalInfo.wxss**/
+input{
+  padding: 10rpx;
+  width: 100%;
+  height:88rpx;
+  border-bottom:1rpx solid #ccc;
+  /* margin: 20rpx auto; */
+}

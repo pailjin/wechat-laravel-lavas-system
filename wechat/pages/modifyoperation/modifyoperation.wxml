@@ -1,0 +1,5 @@
+<!--modifyOperation.wxml-->
+
+<view>
+  <input value="{{ inputValue }}" bindinput="bindReplaceInput" placeholder="请输入..." />
+</view>

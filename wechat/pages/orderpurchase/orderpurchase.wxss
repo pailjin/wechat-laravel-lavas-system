@@ -1,0 +1,125 @@
+.orderpurchase-address {
+  border-bottom: 4rpx solid #3fb207;
+}
+
+.orderpurchase-address-part1 {
+  width: 660rpx;
+}
+
+.orderpurchase-address-part1-contact {
+  padding-bottom: 0;
+}
+
+.orderpurchase-address-part1-image {
+  margin-right: 10rpx;
+  vertical-align: middle;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.orderpurchase-address-part2 {
+  width: 70rpx;
+  text-align: right;
+  padding: 10rpx;
+  margin-top: 42rpx;
+}
+
+.orderpurchase-address-part2-image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.orderpurchase-product {
+  border-bottom: 1rpx solid #ccc;
+}
+
+.orderpurchase-price {
+  display: inline-block;
+  width: 320rpx;
+  font-size: 34rpx;
+  color: red;
+}
+
+.orderpurchase-number {
+  display: inline-block
+}
+
+/*购物车*/
+/*主容器*/
+.stepper {
+    width: 186rpx;
+    height: 55rpx;
+    /*给主容器设一个边框*/
+    border: 1px solid #ccc;
+    border-radius: 10rpx;
+    margin:0 auto;
+}
+
+/*加号和减号*/
+.stepper text {
+    width: 49rpx;
+    line-height: 55rpx;
+    text-align: center;
+    float: left;
+}
+
+/*数值*/
+.stepper input {
+    width: 84rpx;
+    height: 55rpx;
+    float: left;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 26rpx;
+    /*给中间的input设置左右边框即可*/
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+/*普通样式*/
+.stepper .normal{
+    color: black;
+}
+
+/*禁用样式*/
+.stepper .disabled{
+    color: #ccc;
+}
+
+.float-btn {
+  color: #888;
+  position: fixed;
+  /*display: flex;
+  align-items: center;
+  justify-content: right;*/
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: right;
+  bottom: 0;
+  right: 0;
+  font-size: 28rpx;
+  background: #fff;
+  border-top: 2rpx solid #ccc;
+}
+
+.float-btn-part {
+  padding: 20rpx 40rpx;
+}
+
+.float-btn-part-image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.orderpurchase-paybtn {
+  height: 120rpx;
+}
+
+.orderpurchase-paybtn-style {
+  display: inline-block;
+  width: 220rpx;
+  text-align: center;
+  color: #fff;
+  margin-left: 20rpx;
+}

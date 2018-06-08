@@ -1,0 +1,74 @@
+<!--index.wxml-->
+<view>
+  <view class="container" bindtap="gotoProductDetail">
+    <view class="index-part1">
+      <view class="weui-cells weui-cells_after-title postionstatic">
+        <view class="weui-cell">
+          <view class="weui-cell__bd">
+            <view class="overflowdot index-part1-title">
+              {{ productTitle }}
+            </view>
+            <view class="overflowdot index-part1-data">
+              {{ groupData }}
+            </view>
+          </view>
+          <view class="weui-cell__ft index-part1-over">
+            <view class="overflowdot">
+              距离团购结束
+            </view>
+            <view class="overflowdot index-part1-overtime">
+              48时21分46秒
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="index-part2">
+      <view class="weui-cell">
+        <image class="index-part2-prodcutimg" src="{{ productImg }}"></image>
+      </view>
+    </view>
+    <view class="index-part3">
+      <view class="weui-cells weui-cells_after-title postionstatic">
+        <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__bd">
+            <view class="overflowdot index-part3-title">
+              {{ groupTips }}
+            </view>
+            <view class="overflowdot">
+              {{ groupSubTips }}
+            </view>
+          </view>
+          <view class="weui-cell__ft">
+            <image class="index-part3-finger" src="{{ fingerImage }}"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="float-btn clearfloat">
+    <view class="floatleft float-btn-part" bindtap="gotoOrderManager">
+      <image class="float-btn-part-image" src="{{ floatIcon1 }}"></image>
+      <view>订单</view>
+    </view>
+    <view class="floatleft float-btn-part" bindtap="gotoPersonalCenter">
+      <image class="float-btn-part-image" src="{{ floatIcon2 }}"></image>
+      <view>我的</view>
+    </view>
+  </view>
+</view>
+
+
+<!-- <view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view> -->

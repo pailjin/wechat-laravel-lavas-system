@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "我的酷酷小程序",
+  "usingComponents": {
+    "adv": "/components/adv/adv"
+  }
+}

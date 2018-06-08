@@ -1,0 +1,124 @@
+<!--productdetail.wxml-->
+<view>
+  <view class="productdetail-part1">
+    <swiper class="productdetail-part1-swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="{{bg}}">
+      <block wx:for="{{imgUrls}}" wx:key>
+        <swiper-item>
+          <image class="slide-image productdetailswiperimage" src="{{item}}" mode="widthFix" />
+          <!--<image class="productdetailswiperimage" src="{{item}}" class="slide-image" mode="widthFix" bindload='imgHeight' />-->
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="productdetail-part2">
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd overflowdot productdetail-part2-title">
+          {{ productDetailTitle }}
+        </view>
+        <view class="weui-cell__ft index-part1-over">
+          <view class="overflowdot">
+            {{ productDetailOverDesc }}
+          </view>
+          <view class="overflowdot index-part1-overtime">
+            {{ productDetailOverTime }}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title postionstatic">
+      <view class="weui-cell">
+        <view class="weui-cell__bd fontsize28 color999">
+          {{ productDetailFeeTips }}
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd fontsize28 color999">
+          {{ productDetailRefundTips }}
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="productdetail-part3">
+    <view class="weui-panel__bd" wx:for="{{ 4 }}" wx:key>
+      <view class="weui-media-box weui-media-box_appmsg">
+        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg productdetail-part3-grouproduct-image">
+          <image class="weui-media-box__thumb" src="{{ groupProductimage }}" />
+        </view>
+        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+          <view class="weui-media-box__title">
+            <view class="overflowdot">
+              {{ groupProductTitle }}
+            </view>
+            <view class="overflowdot fontsize28 color999">
+              {{ groupProductSubTitle }}
+            </view>
+          </view>
+          <view class="weui-media-box__desc">
+            <view class="productdetail-part3-grouproduct-price">
+              <text class="fontsize36">￥{{ groupProductOriginalPrice }}斤</text>
+              <text class="orignalpricethroughline fontsize28">￥{{ groupProductCommonPrice }}斤</text>
+              <text class="fontsize36 colored">满{{ groupProductNumber }}斤开团</text>
+            </view>
+            <view>
+              <progress percent="{{ groupProductSoldProgress }}" show-info />
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="productdetail-part4">
+    <view class="home-recom">
+      <view class="home2"><text class="preview">{{ consultTitle }}</text></view>
+    </view>
+    <view>
+      <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_appmsg">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb productdetail-consulticon" src="{{ productDetailConsultIcon }}" />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title clearfloat">
+              <view class="floatleft overflowdot productdetail-consultname">
+                {{ productDetailConsultName }}
+              </view>
+              <view class="floatleft fontsize28 color999 productdetail-consultdata">
+                {{ productDetailConsultData }}
+              </view>
+            </view>
+            <view class="weui-media-box__desc">
+              {{ productDetailConsultContent }}
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="productdetail-adminreply">
+        <view class="productdetail-subreply-style">
+          管理员：{{ productDetailAdminReply }}
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="productdetail-part5" style="height: 160rpx;">
+    <view class="release">
+      <textarea class="text"
+      placeholder-class="input_null"
+      fixed="true"
+      maxlength="-1"
+      cursor-spacing="15"
+      auto-height="true"
+      value="{{ productDetailInputContent }}"
+      bindinput="textareaInputMethods"
+      placeholder="咨询/评论"></textarea>
+      <view class="submit" wx:if="{{ productDetailBtnFlag }}" bindtap="sendConsultMessageMethod">
+        发送
+      </view>
+      <view class="submit" wx:else bindtap="purchaseMethod">
+        购买
+      </view>
+    </view>
+  </view>
+</view>

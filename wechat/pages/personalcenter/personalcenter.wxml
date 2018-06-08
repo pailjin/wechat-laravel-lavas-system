@@ -1,0 +1,8 @@
+<view class="">
+  <item itemType="icon" item-left="头像" item-right="{{ usericon }}" bindtap="modifyUserIcon"></item>
+  <item itemType="input" item-left="姓名" item-right="{{ nickname }}" tag="{{ nicknameInMP }}"></item>
+  <item itemType="radio" item-left="性别" item-right="{{ usersex }}" tag="{{ usersexInMP }}"></item>
+  <item itemType="address" item-left="我的收获地址" item-right="{{ useraddress }}"></item>
+  <item itemType="address" item-left="联系客服" item-right="{{ useraddress }}"></item>
+  <item itemType="address" item-left="关于海吉星" item-right="{{ useraddress }}"></item>
+</view>

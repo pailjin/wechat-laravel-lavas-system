@@ -1,0 +1,7 @@
+<view class="">
+  <view class="">
+    <view class="float-btn">
+      <button type="primary" size="default" bindtap="primary" style="height: 100rpx;line-height: 100rpx;">添加新地址</button>
+    </view>
+  </view>
+</view>

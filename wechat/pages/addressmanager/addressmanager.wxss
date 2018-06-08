@@ -1,0 +1,25 @@
+.float-btn {
+  color: #888;
+  position: fixed;
+  /*display: flex;
+  align-items: center;
+  justify-content: right;*/
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: right;
+  bottom: 0;
+  right: 0;
+  font-size: 28rpx;
+  background: #fff;
+  border-top: 2rpx solid #ccc;
+}
+
+.float-btn-part {
+  padding: 20rpx 40rpx;
+}
+
+.float-btn-part-image {
+  width: 50rpx;
+  height: 50rpx;
+}

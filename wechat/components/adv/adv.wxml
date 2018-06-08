@@ -1,0 +1,13 @@
+
+<view class="page clearfloat">
+  <view class="page__bd adv">
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+            <image class="index-adv-img" src="{{ advIcon }}"></image>
+        </view>
+        <view class="weui-cell__bd index-adv-title colore84e2a fontsize30">{{ advTitle }}</view>
+      </view>
+    </view>
+  </view>
+</view>

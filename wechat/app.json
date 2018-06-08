@@ -1,0 +1,21 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/productdetail/productdetail",
+    "pages/orderpurchase/orderpurchase",
+    "pages/addressmanager/addressmanager",
+    "pages/personalcenter/personalcenter",
+    "pages/modifyoperation/modifyoperation",
+    "pages/modifyradiooperation/modifyradiooperation",
+    "pages/ordermanager/ordermanager",
+    "pages/pclogin/pclogin"
+  ],
+
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#3fb207",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle":"white"
+  }
+}

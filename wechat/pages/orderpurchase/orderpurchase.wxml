@@ -1,0 +1,70 @@
+<!--orderpurchase.wxml-->
+<view>
+  <view class="orderpurchase-address clearfloat"> <!-- bindtap="chooseAddress"-->
+    <view class="orderpurchase-address-part1 floatleft">
+      <view class="weui-cells weui-cells_after-title postionstatic">
+        <view class="weui-cell orderpurchase-address-part1-contact">
+          <view class="weui-cell__bd">
+            <input value="{{ buyerName }}" type="text" bindinput="inputReceiverName" placeholder="收件人姓名" placeholder-class="color999"/>
+          </view>
+          <view class="weui-cell__ft">
+            <input value="{{ buyerPhonenumber }}" type="text" bindinput="inputReceiverContact" placeholder="联系方式" placeholder-class="color999"/>
+          </view>
+        </view>
+        <view class="weui-cell postionstatic">
+          <view class="weui-cell__hd">
+            <image class="orderpurchase-address-part1-image" src="{{ addressIcon }}"></image>
+          </view>
+          <view class="weui-cell__bd">
+            <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+              <view class="picker">
+                收货地址：{{region[0]}}{{region[1]}}{{region[2]}}
+              </view>
+            </picker>
+            <view class="">
+              <input value="{{detailAddressValue}}" type="text" bindinput="inputDetailAddress" placeholder="请输入详细地址" placeholder-class="color999"/>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="orderpurchase-address-part2 floatleft">
+      <image class="orderpurchase-address-part2-image" src="{{ addressArrowRight }}"></image>
+    </view>
+  </view>
+  <view class="orderpurchase-product" wx:for="{{10}}" wx:key>
+    <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_appmsg">
+        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+          <image class="weui-media-box__thumb" src="/images/fruit.png" />
+        </view>
+        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+          <view class="weui-media-box__title">{{ productName }}</view>
+          <view class="weui-media-box__desc">
+            <view class="fontsize36 orderpurchase-price">
+              {{ productPrice }}
+            </view>
+            <view class="orderpurchase-number">
+              <view class="stepper">
+                <!-- 减号 -->
+                <text class="{{minusStatus}}" bindtap="bindMinus">-</text>
+                <!-- 数值 -->
+                <input type="number" bindchange="bindManual" value="{{num}}" />
+                <!-- 加号 -->
+                <text class="normal" bindtap="bindPlus">+</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="orderpurchase-paybtn">
+    <view class="float-btn">
+      <text>合计金额：</text>
+      <text class="colored">{{ productTotalPrice }}</text>
+      <text>（{{ isExtraPay }}）</text>
+      <text class="orderpurchase-paybtn-style bgcolor3fb207" bindtap="gotoPayment">立即支付</text>
+    </view>
+  </view>
+</view>

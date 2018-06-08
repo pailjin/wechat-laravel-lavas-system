@@ -1,0 +1,24 @@
+<!--myClub.wxml-->
+<view>
+  <view>
+    <!-- <image class="bannerImg" src="{{ bannerImg }}"></image> -->
+  </view>
+  <view class="">
+    <!-- <image class="userIcon" src="/pages/images/logo.png"></image> -->
+    <view class="textcenter userName">确认登录吗?</view>
+  </view>
+
+<view>
+    <button type="primary" bindtap="gologin" style="margin-top:10px"> 允许登录 </button>
+</view>
+<view>
+    <button type="warn" bindtap="rejectlogin" style="margin-top:10px"> 拒绝登录 </button>
+</view>
+<view>
+    <button bindtap="gohome" style="margin-top:10px"> 继续访问小程序 </button>
+</view>
+<!-- <view>
+    <button type="warn" bindtap="closewx" style="margin-top:10px"> 关闭小程序 </button>
+</view> -->
+
+</view>

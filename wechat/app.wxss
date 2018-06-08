@@ -1,0 +1,118 @@
+/**app.wxss**/
+@import 'weui.wxss';
+
+/*page{
+  background-color: #ccc;
+  height:100%;
+}*/
+
+.container {
+  margin: 30rpx;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+
+.overflowdot {
+  overflow:hidden;
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:1;
+}
+
+.postionstatic {
+  position: static;
+}
+
+.floatleft {
+  float: left;
+}
+
+.clearfloat {
+  overflow: hidden;
+}
+
+.fontsize36 {
+  font-size: 36rpx;
+}
+
+.fontsize32 {
+  font-size: 32rpx;
+}
+
+.fontsize30 {
+  font-size: 30rpx;
+}
+
+.fontsize28 {
+  font-size: 28rpx;
+}
+
+.color666 {
+  color: #666;
+}
+
+.color999 {
+  color: #999;
+}
+
+.colored {
+  color: red;
+}
+
+.orignalpricethroughline {
+  text-decoration: line-through
+}
+
+.bgcolor3fb207 {
+  background: #3fb207;
+}
+
+.borderbottom {
+  border-bottom: 1px solid #ccc;
+}
+
+.textright {
+  text-align: right;
+}
+
+/*.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+
+.colore84e2a {
+  color: #e84e2a;
+}
+
+.color999 {
+  color: #999;
+}
+
+.fontsize30 {
+  font-size: 30rpx;
+}
+
+.fontsize40 {
+  font-size: 40rpx;
+}
+
+.margintop30 {
+  margin-top: 30rpx;
+}
+
+
+
+.clearfloat:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+*/

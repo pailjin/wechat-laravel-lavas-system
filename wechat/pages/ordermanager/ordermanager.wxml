@@ -1,0 +1,74 @@
+<view>
+  <view class="page">
+    <view class="page__bd">
+      <view class="weui-tab">
+        <view class="weui-navbar">
+          <block wx:for="{{tabs}}" wx:key="*this">
+            <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+              <view class="weui-navbar__title">{{item}}</view>
+            </view>
+          </block>
+          <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+        </view>
+        <view class="weui-tab__panel">
+          <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+            <view class="">
+              <view class="">
+                <view class="" style="padding: 20rpx;">
+                  <view class="clearfloat color666 fontsize32">
+                    <view class="floatleft overflowdot" style="width: 450rpx;">
+                      店铺：{{ storeName }}
+                    </view>
+                    <view class="floatleft textright colored" style="width: 230rpx;">
+                      {{ orderStatus }}
+                    </view>
+                  </view>
+                  <view class="fontsize30 color999">
+                    订单编号：{{ orderNumber }}
+                  </view>
+                </view>
+
+                <view class="clearfloat" style="padding: 0 20rpx;background: #e4e4e4;">
+                  <view class="floatleft" style="width: 160rpx;margin-top: 20rpx;">
+                    <image src="/images/fruit.png" style="width: 160rpx;height: 160rpx;"></image>
+                  </view>
+                  <view class="floatleft" style="padding-left: 10rpx;margin-top: 20rpx;">
+                    <view class="clearfloat fontsize28">
+                      <view class="floatleft color666 overflowdot" style="width: 390rpx;">
+                        {{ productName }}
+                      </view>
+                      <view class="floatleft color999 textright" style="width: 150rpx;">
+                        ￥{{ productPrice }}
+                      </view>
+                    </view>
+                    <view class="floatleft clearfloat fontsize28">
+                      <view class="floatleft color666" style="width: 390rpx;">
+                        {{ productDesc }}
+                      </view>
+                      <view class="floatleft color999 textright" style="width: 150rpx;">
+                        x{{ productNumber }}
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <view class="fontsize30 textright" style="padding: 20rpx;border-bottom: 1px solid #ccc;">
+                合计：<text class="colored">￥{{ orderTotalPrice }}</text>
+              </view>
+              <view class="fontsize30 textright" style="padding: 20rpx;border-bottom: 1px solid #ccc;">
+                <view class="" style="display: inline-block;padding: 10rpx 20rpx;border: 1px solid #666;color: #666;border-radius: 10rpx;margin-right: 20rpx;">
+                  取消
+                </view>
+                <view class="" style="display: inline-block;padding: 10rpx 20rpx;border: 1px solid red;background: red;color: #fff;border-radius: 10rpx;margin-right: 10rpx;">
+                  付款
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="weui-tab__content" hidden="{{activeIndex != 1}}">选项二的内容</view>
+          <view class="weui-tab__content" hidden="{{activeIndex != 2}}">选项三的内容</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

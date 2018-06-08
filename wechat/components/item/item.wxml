@@ -1,0 +1,31 @@
+<view class="">
+  <view class="weui-cells weui-cells_after-title postionstatic borderbottom" wx:if="{{ itemType == 'icon' }}">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">{{ itemLeft }}</view>
+      <view class="weui-cell__ft">
+        <image src="{{ itemRight }}" style="width: 100rpx;height: 100rpx;"></image>
+      </view>
+    </view>
+  </view>
+
+  <view class="weui-cells weui-cells_after-title postionstatic borderbottom" wx:if="{{ itemType == 'input' }}" bindtap="setInput">
+    <view class="weui-cell weui-cell_access">
+      <view class="weui-cell__bd">{{ itemLeft }}</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access">{{ itemRight }}</view>
+    </view>
+  </view>
+
+  <view class="weui-cells weui-cells_after-title postionstatic borderbottom" wx:if="{{ itemType == 'radio' }}" bindtap="setRadioChoose">
+    <view class="weui-cell weui-cell_access">
+      <view class="weui-cell__bd">{{ itemLeft }}</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access">{{ itemRight }}</view>
+    </view>
+  </view>
+
+  <view class="weui-cells weui-cells_after-title postionstatic borderbottom" wx:if="{{ itemType == 'address' }}">
+    <view class="weui-cell weui-cell_access">
+      <view class="weui-cell__bd">{{ itemLeft }}</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access">{{ itemRight }}</view>
+    </view>
+  </view>
+</view>
