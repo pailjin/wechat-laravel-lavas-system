@@ -76,13 +76,13 @@ cd laravel
 
    APP_KEY（手动改一下，或者生成，或者不改。php artisan key:generate）
 
-2. 安装依赖库
+### 安装依赖库
 
 ```
    composer install
 ```
 
-3. 生成基础数据库migration
+### 生成基础数据库migration
 
    (先确保数据库db已经创建)
 
@@ -90,7 +90,7 @@ cd laravel
 php artisan migrate
 ```
 
-4. 配置自己平台的参数
+### 配置自己平台的参数
 
    目录：/laravel/config/
 
@@ -98,18 +98,79 @@ php artisan migrate
 
    微信配置（小程序和支付）：weixinpay.php
 
-5. 对外api route说明
+### 对外api route说明
 
-   目录：laravel/routes/api.php
+   目录：laravel/routes/api.php 支持的api route列举在其中
 
    （我关闭了标准的login/signup之类的api，因为微信小程序中使用wx.login自动注册登录【下面详细说】）
 
-6. 本地测试。
+### 本地测试。
 
    建议使用valet（参见官方:https://laravel.com/docs/5.6/valet）
 
+   访问: http://[域名]/api/hello 如果可以访问则运行正常
 
-# 后台admin授权登录设计
+### 部署到服务器
+
+   整个laravel目录需要拷贝到服务器。配置php环境。
+   由于一般不会把vendor的依赖库和.evn 发布到您的git仓库。所以需要进入服务器把.evn 文件和vendor重新生成。
+   也就是：
+   ```
+   拷贝.evn.example为.evn，并修改关键参数
+   ```
+   ```
+   composer install
+   ```
+   ```
+   注意：laravel/public 为网站服务器的root根目录[这些属于laravel的基本操作，其他的操作不赘述了]
+   ```
+
+## lavas后台架构
+
+###  安装lavas
+
+   参考lavas官方网站的步骤
+
+   ```
+   npm install lavas -g
+   ```
+### 进入lavas目录
+
+ ```
+ cd lavas
+ ```
+
+### 安装依赖库
+
+```
+npm install
+```
+
+### 修改配置
+
+   （可选）关注本地测试时的api proxy【lavas/server.dev.js中的proxyTable】
+
+###  本地测试
+
+```
+lavas dev
+```
+
+   访问http://localhost:3000/ 如果正常，则成功
+
+   ![lavas](images/lavas.jpg)
+
+### 说明
+
+   当前只实现了‘登录’按钮功能（即授权登录）
+
+### 后台admin授权登录设计
 参考附件：《微信小程序授权登录设计-0609.pptx》
 
-# 部署到服务器
+### 部署到服务器
+
+```
+lavas build
+```
+
+   生成dist/目录,该目录为需要发布到您服务器网站
