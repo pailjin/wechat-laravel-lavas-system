@@ -14,22 +14,22 @@
 # 写在最前：
     参考和使用的git代码：
 
-    [laravel-boilerplate]
+[laravel-boilerplate]
 
-    [laravel-boilerplate]: https://github.com/francescomalatesta/laravel-api-boilerplate-jwt
+[laravel-boilerplate]: https://github.com/francescomalatesta/laravel-api-boilerplate-jwt
 
 
-    [小程序授权登录思路参考]
+[小程序授权登录思路参考]
 
-    [小程序授权登录思路参考]: https://blog.csdn.net/P6P7qsW6ua47A2Sb/article/details/78892430
+[小程序授权登录思路参考]: https://blog.csdn.net/P6P7qsW6ua47A2Sb/article/details/78892430
 
-    [微信小程序二维码官方介绍]
+[微信小程序二维码官方介绍]
 
-    [微信小程序二维码官方介绍]: https://developers.weixin.qq.com/miniprogram/dev/api/qrcode.html
+[微信小程序二维码官方介绍]: https://developers.weixin.qq.com/miniprogram/dev/api/qrcode.html
 
-    [Lavas百度官方介绍]
+[Lavas百度官方介绍]
 
-    [Lavas百度官方介绍]: https://lavas.baidu.com
+[Lavas百度官方介绍]: https://lavas.baidu.com
 
    另外，希望你是知道什么是laravel，lavas,微信小程序的基本开发过程.等，或者知道一些开源框架的基本使用。
 
