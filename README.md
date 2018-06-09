@@ -30,6 +30,7 @@
 
 [Lavas百度官方介绍]: https://lavas.baidu.com
 
+另外，希望你是知道什么是laravel，lavas等，或者知道一些开源框架的基本使用。
 
 (详细编写中...)
 
@@ -37,14 +38,22 @@
 
 基础环境要求
 php7.1
+
 composer
+
 npm
+
 laravel（https://laravel.com/docs/5.6/installation）
+
 lavas（https://lavas.baidu.com/guide/v2/basic/install）
+
 nodejs
 
-代码运行
-1 Laravel:
+
+# 代码运行
+1. Laravel:
+
+
 进入laravel目录，composer install
 配置config
 1/ .env文件
