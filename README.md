@@ -39,18 +39,17 @@
 
    基础环境要求:
 
-   php7.1
+*   php7.1
 
-   composer
+*    composer
 
-   npm
+*    npm
 
-   laravel（https://laravel.com/docs/5.6/installation）
+*    laravel（https://laravel.com/docs/5.6/installation）
 
-   lavas（https://lavas.baidu.com/guide/v2/basic/install）
+*    lavas（https://lavas.baidu.com/guide/v2/basic/install）
 
-   nodejs
-
+*    微信小程序开发者工具
 
 # 代码运行
 ## 一、Laravel:
@@ -66,15 +65,15 @@ cd laravel
 
 1. .env文件
 
-   拷贝.evn.example为.evn，并修改关键参数：
+*    拷贝.evn.example为.evn，并修改关键参数：
 
-   数据库mysql （提前创建一个空的数据库db，不需要创建table）
+*    数据库mysql （提前创建一个空的数据库db，不需要创建table）
 
-   APP_NAME
+*   APP_NAME
 
-   JWT_SECRET(手动改一下，或者生成，或者不改)
+*    JWT_SECRET(手动改一下，或者生成，或者不改)
 
-   APP_KEY（手动改一下，或者生成，或者不改。php artisan key:generate）
+*    APP_KEY（手动改一下，或者生成，或者不改。php artisan key:generate）
 
 ### 2安装依赖库
 
@@ -94,11 +93,11 @@ php artisan migrate
 
    目录：/laravel/config/
 
-   七牛配置：qiniu.php
+*    七牛配置：qiniu.php
 
-   微信配置（小程序和支付）：weixinpay.php
+*    微信配置（小程序和支付）：weixinpay.php
 
-   微信退款需要的证书目录，请更新自己的证书文件
+*    微信退款需要的证书目录，请更新自己的证书文件
    ```
    laravel/app/wxpaycert
    ```
@@ -263,3 +262,11 @@ lavas build
    ```
    wechat/pages/personalcenter/personalcenter.js的modifyUserIcon函数
    ```    
+
+# 最后
+代码在完善中，也欢迎一起加入.
+
+
+# LICENSE
+
+   Released under the MIT License
