@@ -7,17 +7,30 @@
 * 微信小程序用户自动注册和登录
 * Lavas集成UI插件（mint UI,muse UI）,兼容PC和移动前端
 
-写在最前：
+# 写在最前：
 参考和使用的git代码：
-https://github.com/francescomalatesta/laravel-api-boilerplate-jwt
-https://blog.csdn.net/P6P7qsW6ua47A2Sb/article/details/78892430
-https://developers.weixin.qq.com/miniprogram/dev/api/qrcode.html
-https://lavas.baidu.com
 
-#TODO
+[laravel-boilerplate]
+[laravel-boilerplate]: https://github.com/francescomalatesta/laravel-api-boilerplate-jwt
+
+
+[小程序授权登录思路参考]
+
+[小程序授权登录思路参考]: https://blog.csdn.net/P6P7qsW6ua47A2Sb/article/details/78892430
+
+[微信小程序二维码官方介绍]
+
+[微信小程序二维码官方介绍]: https://developers.weixin.qq.com/miniprogram/dev/api/qrcode.html
+
+[Lavas百度官方介绍]
+
+[Lavas百度官方介绍]: https://lavas.baidu.com
+
+
 (详细编写中...)
 
-环境安装
+# 环境安装
+
 基础环境要求
 php7.1
 composer
