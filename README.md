@@ -54,7 +54,12 @@ nodejs
 1. Laravel:
 
 
-进入laravel目录，composer install
+进入laravel目录，
+``` 
+composer install
+```
+
+
 配置config
 1/ .env文件
 拷贝.evn.example为.evn，并修改关键参数：
