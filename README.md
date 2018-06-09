@@ -53,19 +53,19 @@ nodejs
 
 
 # 代码运行
-1. Laravel:
+## Laravel:
 
 
-进入laravel目录，
+### 进入laravel目录，
 
 ```
 composer install
 ```
 
 
-配置config
+### 配置config
 
-1/ .env文件
+1. .env文件
 
 拷贝.evn.example为.evn，并修改关键参数：
 
@@ -77,9 +77,9 @@ JWT_SECRET(手动改一下，或者生成，或者不改)
 
 APP_KEY（手动改一下，或者生成，或者不改。php artisan key:generate）
 
-2/ composer install
+2. composer install
 
-3/ 生成基础数据库migration
+3. 生成基础数据库migration
 
 (先确保数据库db已经创建)
 
@@ -87,7 +87,7 @@ APP_KEY（手动改一下，或者生成，或者不改。php artisan key:genera
 php artisan migrate
 ```
 
-4/ 配置自己平台的参数
+4. 配置自己平台的参数
 
 目录：/laravel/config/
 
@@ -95,13 +95,13 @@ php artisan migrate
 
 微信配置（小程序和支付）：weixinpay.php
 
-5/ 对外api route说明
+5. 对外api route说明
 
 目录：laravel/routes/api.php
 
 （我关闭了标准的login/signup之类的api，因为微信小程序中使用wx.login自动注册登录【下面详细说】）
 
-6/ 本地测试。建议使用valet（参见官方:https://laravel.com/docs/5.6/valet）
+6. 本地测试。建议使用valet（参见官方:https://laravel.com/docs/5.6/valet）
 
 
 # 后台admin授权登录设计
