@@ -14,6 +14,9 @@ the path method will return foo/bar:
 
 $uri = $request->path();
 */
+use Auth;
+use App\User;
+
 class checkadmin
 {
     /**
@@ -25,12 +28,24 @@ class checkadmin
      */
     public function handle($request, Closure $next)
     {
+// 用户等级：0 无效，10 普通user， 20 管理员 30 员工
         if ($request->isMethod('post')) {
             if($request->get('userlevel')){
-              return response()->json([
-                  'status' => 'ko',
-                  'ret' => 'not admin'
-              ], 201);
+              $user_id = Auth::id();
+              if($user_id){
+                $user = User::find($user_id);
+                if($user){
+                  if($user->userlevel != 20){
+                    return response()->json([
+                        'status' => 'ko',
+                        'ret' => 'not admin'
+                    ], 201);
+                  }
+
+                }
+
+              }
+
             }
         }
 

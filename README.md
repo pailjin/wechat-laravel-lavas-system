@@ -98,6 +98,11 @@ php artisan migrate
 
    微信配置（小程序和支付）：weixinpay.php
 
+   微信退款需要的证书目录，请更新自己的证书文件
+   ```
+   laravel/app/wxpaycert
+   ```
+
 ### 5对外api route说明
 
    目录：laravel/routes/api.php 支持的api route列举在其中
@@ -124,6 +129,24 @@ php artisan migrate
    ```
    注意：laravel/public 为网站服务器的root根目录[这些属于laravel的基本操作，其他的操作不赘述了]
    ```
+
+### 8权限管理
+
+   配合pc后台管理，需要一个管理员/员工的权限管理，去限制数据库/api的某些操作。
+
+* 使用checkadmin middleware
+   路径为：
+   ```
+   laravel/app/Http/Middleware/checkadmin.php
+   ```
+
+   对应使用该middleware的controller有
+   ```
+   laravel/app/Api/V1/Controllers/UserController.php
+   ```
+   中的__construct
+
+   可以参考修改checkadmin.php丰富您的权限管理
 
 ## 二、lavas后台架构
 
@@ -165,7 +188,10 @@ lavas dev
    当前只实现了‘登录’按钮功能（即授权登录）
 
 ### 7后台admin授权登录设计
-参考附件：《微信小程序授权登录设计-0609.pptx》
+
+   参考附件：《微信小程序授权登录设计-0609.pptx》
+
+![PC授权登录](images/pclogin.jpg)
 
 ### 8部署到服务器
 
@@ -230,3 +256,10 @@ lavas build
 
    ```      
     注意代码段中的wx.request的使用，以及返回值。请对应去laravel API代码中controller对应的代码处理。
+
+### 3七牛上传
+
+   实例代码路径：
+   ```
+   wechat/pages/personalcenter/personalcenter.js的modifyUserIcon函数
+   ```    
