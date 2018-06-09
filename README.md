@@ -62,7 +62,7 @@ nodejs
 cd laravel
 ```
 
-### 配置config
+### 1配置config
 
 1. .env文件
 
@@ -76,13 +76,13 @@ cd laravel
 
    APP_KEY（手动改一下，或者生成，或者不改。php artisan key:generate）
 
-### 安装依赖库
+### 2安装依赖库
 
 ```
    composer install
 ```
 
-### 生成基础数据库migration
+### 3生成基础数据库migration
 
    (先确保数据库db已经创建)
 
@@ -90,7 +90,7 @@ cd laravel
 php artisan migrate
 ```
 
-### 配置自己平台的参数
+### 4配置自己平台的参数
 
    目录：/laravel/config/
 
@@ -98,19 +98,19 @@ php artisan migrate
 
    微信配置（小程序和支付）：weixinpay.php
 
-### 对外api route说明
+### 5对外api route说明
 
    目录：laravel/routes/api.php 支持的api route列举在其中
 
    （我关闭了标准的login/signup之类的api，因为微信小程序中使用wx.login自动注册登录【下面详细说】）
 
-### 本地测试。
+### 6本地测试。
 
    建议使用valet（参见官方:https://laravel.com/docs/5.6/valet）
 
    访问: http://[域名]/api/hello 如果可以访问则运行正常
 
-### 部署到服务器
+### 7部署到服务器
 
    整个laravel目录需要拷贝到服务器。配置php环境。
    由于一般不会把vendor的依赖库和.evn 发布到您的git仓库。所以需要进入服务器把.evn 文件和vendor重新生成。
@@ -127,30 +127,30 @@ php artisan migrate
 
 ## lavas后台架构
 
-###  安装lavas
+###  1安装lavas
 
    参考lavas官方网站的步骤
 
    ```
    npm install lavas -g
    ```
-### 进入lavas目录
+### 2进入lavas目录
 
  ```
  cd lavas
  ```
 
-### 安装依赖库
+### 3安装依赖库
 
 ```
 npm install
 ```
 
-### 修改配置
+### 4修改配置
 
    （可选）关注本地测试时的api proxy【lavas/server.dev.js中的proxyTable】
 
-###  本地测试
+### 5本地测试
 
 ```
 lavas dev
@@ -160,17 +160,74 @@ lavas dev
 
    ![lavas](images/lavas.jpg)
 
-### 说明
+### 6说明
 
    当前只实现了‘登录’按钮功能（即授权登录）
 
-### 后台admin授权登录设计
+### 7后台admin授权登录设计
 参考附件：《微信小程序授权登录设计-0609.pptx》
 
-### 部署到服务器
+### 8部署到服务器
 
 ```
 lavas build
 ```
 
    生成dist/目录,该目录为需要发布到您服务器网站
+
+## 微信小程序
+
+   基于微信官方开发工具生成的代码框架。
+
+### 1修改参数
+
+   wechat/config.js中api域名和七牛域名
+   ```
+   var host = 'https://api.abc.com';
+   var qiniudomain = 'https://qinius.abc.com';
+   ```
+
+   wechat/project.config.json中微信小程序appid和project name
+   ```
+   "appid": "xxxxxxxxxxxxxx",
+   "projectname": "WLLxcx",
+   ```
+
+### 2关键代码说明
+
+   自动登录(wechat/app.js)
+
+   ```
+   wx.login({
+     success: res => {
+       // 发送 res.code 到后台换取 openId, sessionKey, unionId,但api并不会返回openid，而是直接自动登录，返回用户信息。并且自动注册和登录
+       wx.request({
+         url: config.service.requestUrl+'/wxlogin/'+res.code, //仅为示例，并非真实的接口地址
+         data: {
+         },
+         header: {
+           'content-type': 'application/json' // 默认值
+         },
+         method: 'GET',
+         success: function(res) {
+           console.log('wx.login---res==',res.data);
+
+           if(res.data.status=='ok'){
+             var ret = res.data.ret;
+             _this.globalData.iflogin = true;
+             _this.globalData.apitoken = ret.token;
+             _this.globalData.userInfo = ret.userinfo;
+             if (this.apiloginCallback) {
+               this.apiloginCallback()
+             }
+           }else{
+             _this.globalData.iflogin = false;
+             _this.globalData.apitoken = '';
+             _this.globalData.userInfo = null;
+           }
+         }
+       })
+
+   ```      
+    注意代码段中的wx.request的使用，以及返回值。请对应去laravel API代码中controller对应的代码处理。
+    
