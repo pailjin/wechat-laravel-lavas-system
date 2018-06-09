@@ -12,7 +12,7 @@
 * Lavas集成UI插件（mint UI,muse UI）,兼容PC和移动前端
 
 # 写在最前：
-    参考和使用的git代码：
+* 参考和使用的git代码：
 
 [laravel-boilerplate]
 
