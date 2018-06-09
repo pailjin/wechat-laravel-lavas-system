@@ -1,9 +1,7 @@
 # wechat-larvel-lavas-system
 主要目的是在微信小程序系统的搭建初期，方便快速构建，前后台页面基本框架，基本的用户注册登录和图片/视频等资源的上传以及微信支付。
-![架构图]
 
-[架构图]: arch.jpg "arch" { width:auto; max-width:90% }
-
+![架构图](arch.jpg)
 
 主要功能：
 
