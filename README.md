@@ -15,6 +15,7 @@
 参考和使用的git代码：
 
 [laravel-boilerplate]
+
 [laravel-boilerplate]: https://github.com/francescomalatesta/laravel-api-boilerplate-jwt
 
 
@@ -55,7 +56,7 @@ nodejs
 
 
 进入laravel目录，
-``` 
+```
 composer install
 ```
 
