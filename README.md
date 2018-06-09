@@ -37,7 +37,8 @@
 
 # 环境安装
 
-基础环境要求
+基础环境要求:
+
 php7.1
 
 composer
@@ -56,26 +57,52 @@ nodejs
 
 
 进入laravel目录，
+
 ```
 composer install
 ```
 
 
 配置config
+
 1/ .env文件
+
 拷贝.evn.example为.evn，并修改关键参数：
+
 数据库mysql （提前创建一个空的数据库db，不需要创建table）
+
 APP_NAME
+
 JWT_SECRET(手动改一下，或者生成，或者不改)
+
 APP_KEY（手动改一下，或者生成，或者不改。php artisan key:generate）
 
 2/ composer install
 
 3/ 生成基础数据库migration
-(先确保数据库db已经创建)
-php artisan migrate
 
-4/ 本地测试。建议使用valet（参见官方:https://laravel.com/docs/5.6/valet）
+(先确保数据库db已经创建)
+
+```
+php artisan migrate
+```
+
+4/ 配置自己平台的参数
+
+目录：/laravel/config/
+
+七牛配置：qiniu.php
+
+微信配置（小程序和支付）：weixinpay.php
+
+5/ 对外api route说明
+
+目录：laravel/routes/api.php
+
+（我关闭了标准的login/signup之类的api，因为微信小程序中使用wx.login自动注册登录【下面详细说】）
+
+6/ 本地测试。建议使用valet（参见官方:https://laravel.com/docs/5.6/valet）
+
 
 # 后台admin授权登录设计
 参考附件：《微信小程序授权登录设计-0609.pptx》
